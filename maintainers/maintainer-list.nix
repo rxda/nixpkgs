@@ -23684,6 +23684,12 @@
     githubId = 12877905;
     name = "Roman Volosatovs";
   };
+  rxda = {
+    email = "sxfscool@gmail.com";
+    github = "rxda";
+    githubId = 19545808;
+    name = "rxda";
+  };
   rwxd = {
     email = "git@rwxd.de";
     github = "rwxd";
