@@ -18,7 +18,7 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "bilibili-video-downloader";
-  version = "0.2.0";
+  version = "0.2.1";
 
   __structuredAttrs = true;
 
@@ -26,7 +26,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     owner = "lanyeeee";
     repo = "bilibili-video-downloader";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-l0+CTu5jl3EzpBFmvqnrS3a7lwaV4zRtZV8GKH5Wwi4=";
+    hash = "sha256-VaZQs48K6Oh8mKpDvcbPAy8ud9nl8zytdv6c0OoSQYs=";
   };
 
   pnpmDeps = fetchPnpmDeps {
@@ -34,7 +34,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     version = finalAttrs.version;
     src = finalAttrs.src;
     pnpm = pnpm_9;
-    hash = "sha256-/+HML4CEJFVGgjLys0lzLIM1QTNBSK4HMJ+oxPS53qQ=";
+    hash = lib.fakeHash;
     fetcherVersion = 2;
   };
 
@@ -66,7 +66,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     pnpm build
   '';
 
-  cargoHash = "sha256-ICZtSWDWho3UVTMVb4CfAbOSopKXyQEJ/A15BGBLdr0=";
+  cargoHash = lib.fakeHash;
 
   postInstall = ''
     install -Dm644 src-tauri/icons/128x128.png $out/share/icons/hicolor/128x128/apps/${finalAttrs.pname}.png
